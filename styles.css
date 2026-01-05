@@ -97,8 +97,8 @@ h1 {
 /* Links */
 .links {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
     flex-wrap: wrap;
 }
 
