@@ -1,0 +1,200 @@
+/* CSS Variables for theming */
+:root {
+    --bg: #FAFAFA;
+    --text: #1a1a1a;
+    --text-secondary: #666;
+    --accent: #1a1a1a;
+    --link-hover: #555;
+    --border: #e0e0e0;
+}
+
+[data-theme="dark"] {
+    --bg: #1a1a1a;
+    --text: #f0f0f0;
+    --text-secondary: #999;
+    --accent: #f0f0f0;
+    --link-hover: #ccc;
+    --border: #333;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+}
+
+/* Layout */
+main {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 4rem;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.header-content {
+    flex: 1;
+}
+
+.headshot {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+
+/* Bio */
+.bio {
+    margin-bottom: 2rem;
+}
+
+.bio p {
+    margin-bottom: 1.25rem;
+    color: var(--text);
+}
+
+.bio p:last-child {
+    margin-bottom: 0;
+}
+
+.bio strong {
+    font-weight: 500;
+}
+
+/* Links */
+.links {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.links a:hover {
+    color: var(--link-hover);
+    border-color: var(--text);
+}
+
+/* Footer */
+footer {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.theme-toggle:hover {
+    opacity: 1;
+}
+
+.theme-toggle .moon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .sun {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .moon {
+    display: inline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+
+    main {
+        padding: 3rem 1.25rem 3rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .links {
+        gap: 1.5rem;
+    }
+}
+
+/* Subtle animation on load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Selection styling */
+::selection {
+    background-color: var(--text);
+    color: var(--bg);
+}
