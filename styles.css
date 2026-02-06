@@ -90,6 +90,15 @@ h1 {
     margin-bottom: 0;
 }
 
+.bio ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.bio li {
+    margin-bottom: 0.4rem;
+}
+
 .bio strong {
     font-weight: 500;
 }
