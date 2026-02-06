@@ -174,7 +174,7 @@ footer {
     }
 
     main {
-        padding: 3rem 1.25rem 5rem;
+        padding: 1.5rem 1.25rem 5rem;
     }
 
     h1 {
@@ -183,6 +183,10 @@ footer {
 
     .links {
         gap: 1.5rem;
+    }
+
+    header {
+        margin-bottom: 0.75rem;
     }
 
     .headshot {
