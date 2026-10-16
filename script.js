@@ -1,6 +1,6 @@
 // Theme toggle with system preference detection
 (function() {
-    const toggle = document.querySelector('.theme-toggle');
+    const toggles = document.querySelectorAll('.theme-toggle');
     const html = document.documentElement;
 
     // Check for saved preference, otherwise use system preference
@@ -14,13 +14,13 @@
     }
 
     // Toggle theme on click
-    toggle.addEventListener('click', () => {
+    toggles.forEach(toggle => toggle.addEventListener('click', () => {
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-    });
+    }));
 
     // Listen for system preference changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
